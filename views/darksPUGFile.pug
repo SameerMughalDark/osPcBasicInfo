@@ -1,0 +1,67 @@
+// views/darksPUGFile.pug
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Darks OS-Info(Basic-Version)
+  style.
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b8b1af;
+    color: #333;
+    }
+    .container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #252121;
+    color: wheat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background-color 0.3s;
+    }
+    h1 {
+    color: #e44d26;
+    }
+    p {
+    line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+    .container {
+    width: auto;
+    }
+    }
+.container
+  h1(align='center') OS Info(Basic-Version)
+  div(style='text-align: center;')
+    p User Name: 
+     b #{data.userName}  
+
+    p Your User Information Files are located: 
+     b #{data.filesLocation}  
+
+    p Your Desktop Name: 
+     b #{data.hostName}  
+
+    p Your Operating System Type is : 
+     b #{data.operatingType}  
+
+    p Your Operating System is : 
+     b #{data.arictec}  
+
+    p Total Number of Processors in CPU : 
+     b #{data.totalProcessors}  
+
+    each items in data.machineInformation
+        p Processors Model and its speed Details : 
+         b #{items.model} speed : 
+         b #{items.speed} MHz
+
+      
+
+    
+
